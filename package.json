@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "TDD Katas with typescript and jest",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest --watchAll"
