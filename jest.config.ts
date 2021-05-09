@@ -1,4 +1,7 @@
-module.exports = {
+import type { Config } from "@jest/types";
+
+const config: Config.InitialOptions = {
+  verbose: true,
   roots: ["<rootDir>/src"],
   testMatch: [
     "**/__tests__/**/*.+(ts|tsx|js)",
@@ -18,3 +21,4 @@ module.exports = {
     },
   },
 };
+export default config;
