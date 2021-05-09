@@ -1,5 +1,4 @@
-// https://osherove.com/tdd-kata-1
-
+// Kata URL: https://osherove.com/tdd-kata-1
 import Calculator from "./string-calculator";
 
 describe("Calculate string", () => {
@@ -34,5 +33,22 @@ describe("Calculate string", () => {
     const stringNumber: string = "3\n2,10,5";
     const result = new Calculator().Add(stringNumber);
     expect(result).toBe(20);
+  });
+
+  // Part #4 of kata.
+  it("Should determine the delimiter as the char after // and return the sum of the numbers", () => {
+    const stringNumber: string = "3//;\n1;2";
+    const result = new Calculator().Add(stringNumber);
+    expect(result).toBe(6);
+  });
+
+  // Part #5 of kata.
+  it("Should return an Exception when a number was negative", () => {
+    try {
+      const stringNumber: string = "10,4,-1";
+      expect(new Calculator().Add(stringNumber));
+    } catch (e) {
+      expect(e.message).toBe("negatives not allowed");
+    }
   });
 });
